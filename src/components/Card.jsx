@@ -14,10 +14,10 @@ function Card({ result }) {
           width={500}
           height={300}
           alt="Images"
-          className="sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300"
+          className="sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300 object-cover"
         ></Image>
         <div className="p-2">
-          <p className="line-champ-2 text-md">{result.overview}</p>
+          <p className="line-clamp-2 text-md">{result.overview}</p>
           <h2 className="text-lg font-bold truncate">
             {result.title || result.name}
           </h2>

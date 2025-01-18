@@ -19,7 +19,8 @@ async function MoviePage({ params }) {
           width={500}
           height={300}
           className="rounded-lg"
-          style={{ maxWidth: "100%", height: "100%" }}
+          alt="Images"
+          style={{ maxWidth: "auto", height: "auto" }}
         ></Image>
 
         {/* Left Part */}
@@ -30,7 +31,7 @@ async function MoviePage({ params }) {
           <p className="text-lg mb-3">{movie.overview}</p>
 
           <p className="mb-3">
-            <span className="font-semibold mr-1">Released Date:</span>
+            <span className="font-semibold mr-1">Release Date:</span>
             {movie.release_date || movie.first_air_date}
           </p>
           <p className="mb-3">
