@@ -2,10 +2,12 @@ import Image from "next/image";
 import React from "react";
 
 async function MoviePage({ params }) {
-  const movieId = params.id;
-
+  // Ensure params is correctly passed to the component
+  const { id } = params; // Destructure to get the id from params
+  
+  // Fetch movie data from The Movie Database API
   const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}`
   );
   const movie = await res.json();
 
@@ -19,11 +21,12 @@ async function MoviePage({ params }) {
           width={500}
           height={300}
           className="rounded-lg"
-          alt="Images"
+          alt={`${movie.id}`}
           style={{ maxWidth: "auto", height: "auto" }}
+          priority
         ></Image>
 
-        {/* Left Part */}
+        {/* Right Part */}
         <div className="p-2">
           <h2 className="text-lg mb-3 font-bold">
             {movie.title || movie.name}
