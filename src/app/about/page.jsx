@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='max-w-6xl mx-4 lg:mx-auto space-y-4'>
+    <div className='max-w-6xl mx-4 h-screen lg:mx-auto space-y-4'>
       <h1 className='text-2xl text-amber-600'>About</h1>
       <p>
         Welcome to our movie database website! We are a team of passionate movie
