@@ -14,7 +14,7 @@ function Card({ result }) {
           width={500}
           height={100}
           alt={`${result.id}`}
-          className="group-hover:opacity-75 transition-opacity duration-300 object-cover h-[20vh] sm:h-[30vh] md:h-[35vh] lg:h-[40vh]"
+          className="group-hover:opacity-75 transition-opacity duration-300 object-cover h-[20vh] sm:h-[30vh] lg:h-[35vh]"
           priority
         ></Image>
         <div className="p-2">

@@ -1,5 +1,4 @@
 "use client";
-const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -12,7 +11,7 @@ async function fetchGenres() {
 
   try {
     const res = await fetch(
-      `${TMDB_BASE_URL}/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
     );
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
@@ -59,7 +58,7 @@ function GenreFilter() {
       </button>
 
       {showPopup && (
-        <div className="absolute top-12 left-0 bg-white border border-gray-300 shadow-md rounded p-4 w-[26rem] max-h-[60vh] overflow-y-auto z-10">
+        <div className="absolute top-12 left-0 bg-white border border-gray-300 shadow-md rounded p-4 w-[20rem] max-h-[35vh] sm:w-[26rem] sm:max-h-[60vh] overflow-y-auto z-10">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg text-amber-500 font-bold">Select Genre</h2>
             <button

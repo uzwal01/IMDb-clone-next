@@ -7,7 +7,7 @@ async function MoviePage({ params }) {
   
   // Fetch movie data from The Movie Database API
   const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
   );
   const movie = await res.json();
 
