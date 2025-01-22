@@ -6,16 +6,17 @@ import { useTheme } from "next-themes";
 
 function DarkModeSwitch() {
   const { theme, setTheme, systemTheme } = useTheme();
-  
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null; // Render nothing until the component is mounted
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
     <div>
-      {mounted &&
-      (currentTheme === "dark" ? (
+      {currentTheme === "dark" ? (
         <MdLightMode
           onClick={() => setTheme("light")}
           className="text-xl cursor-pointer hover:text-amber-500"
@@ -25,7 +26,7 @@ function DarkModeSwitch() {
           onClick={() => setTheme("dark")}
           className="text-xl cursor-pointer hover:text-amber-500"
         />
-      ))}
+      )}
     </div>
   );
 }
